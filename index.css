@@ -337,31 +337,9 @@ body {
   padding: 0;
 }
 
-.graphics-content {
-  position: relative;
-  z-index: 1;
-  min-height: 150px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0;
-  scale: 0.55;
-  margin-top: -110px;
-  margin-bottom: -110px;
-}
 
-#graphics-panel {
-  margin: 4vh 31px 4vh 0px;
-  padding: 2vh 0px;
-}
 
-#graphics-panel h2 {
-  font-size: 22px;
-  color: var(--text-color);
-  font-family: "Questrial", sans-serif;
-  margin-bottom: 4vh;
-  word-wrap: break-word;
-}
+
 
 .research_card {
   background: #e3f2fd !important;
