@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ririleyy.github.io/sitemap.xml
