@@ -200,6 +200,37 @@ body {
   vertical-align: middle;
 }
 
+#linkedin {
+  margin-top: -1vh !important;
+  margin-bottom: 0;
+}
+
+#linkedin a {
+  color: #fff !important;
+  text-decoration: none;
+  font-size: 14px;
+  font-family: "Poppins", sans-serif;
+  opacity: 0.9;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+#linkedin a:hover {
+  text-decoration: underline;
+  opacity: 1;
+}
+
+#linkedin a img {
+  filter: invert(1);
+  vertical-align: middle;
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+  position: relative;
+  top: -2px;
+}
+
 #left-resume-btn {
   margin-top: 4vh !important;
   text-align: right;
