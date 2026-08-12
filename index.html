@@ -49,28 +49,77 @@
         </div>
       </div>
 
-      <div class="hero-visual" aria-label="A dark fantasy castle scene representing Jiayi's game currently in development">
-        <img src="assets/in-development-game.png" alt="Moonlit gothic arches overlooking a fantasy castle">
-        <div class="visual-shade" aria-hidden="true"></div>
+      <div class="hero-visual game-carousel" aria-label="Featured game carousel" aria-roledescription="carousel" tabindex="0">
+        <div class="carousel-track">
+          <article class="carousel-slide is-active" data-slide aria-hidden="false">
+            <img src="assets/in-development-game.png" alt="Moonlit gothic arches overlooking a fantasy castle">
+            <div class="visual-shade" aria-hidden="true"></div>
+            <div class="visual-caption">
+              <span class="caption-index">01</span>
+              <div><strong>Building the next world</strong><small>Unreal Engine / In development</small></div>
+            </div>
+            <div class="development-mark" role="img" aria-label="Pixel witch indicating a game currently in development">
+              <div class="witch-flight" aria-hidden="true">
+                <img class="pixel-witch" src="assets/pixel-witch-transparent.png" alt="">
+              </div>
+              <div class="development-status" aria-hidden="true">
+                <span class="development-label">Development in progress</span>
+                <span class="progress-track"><span class="progress-fill"></span></span>
+              </div>
+            </div>
+          </article>
+
+          <article class="carousel-slide" data-slide aria-hidden="true">
+            <video muted loop playsinline preload="metadata" poster="Demo/battle-blaster-poster.jpg" aria-hidden="true">
+              <source src="Demo/battle-blaster-preview.mp4" type="video/mp4">
+            </video>
+            <div class="visual-shade" aria-hidden="true"></div>
+            <a class="visual-caption carousel-project-link" href="battle-blaster.html" aria-label="Open the Battle Blaster case study">
+              <span class="caption-index">02</span>
+              <div><strong>Battle Blaster</strong><small>Unreal Engine / Tank combat</small></div>
+            </a>
+          </article>
+
+          <article class="carousel-slide" data-slide aria-hidden="true">
+            <video muted loop playsinline preload="metadata" poster="Demo/shooter-sam-poster.jpg" aria-hidden="true">
+              <source src="Demo/shooter-sam-preview.mp4" type="video/mp4">
+            </video>
+            <div class="visual-shade" aria-hidden="true"></div>
+            <a class="visual-caption carousel-project-link" href="shooter-sam.html" aria-label="Open the Shooter Sam case study">
+              <span class="caption-index">03</span>
+              <div><strong>Shooter Sam</strong><small>Unreal Engine / Tactical shooter</small></div>
+            </a>
+          </article>
+
+          <article class="carousel-slide" data-slide aria-hidden="true">
+            <video muted loop playsinline preload="metadata" poster="Demo/fishing-engine-poster.jpg" aria-hidden="true">
+              <source src="Demo/fishing-engine-preview.mp4" type="video/mp4">
+            </video>
+            <div class="visual-shade" aria-hidden="true"></div>
+            <a class="visual-caption carousel-project-link" href="fishing-engine.html" aria-label="Open the Fishing Game case study">
+              <span class="caption-index">04</span>
+              <div><strong>Fishing Game</strong><small>Custom C++ / OpenGL engine</small></div>
+            </a>
+          </article>
+        </div>
+
         <div class="viewfinder" aria-hidden="true">
           <span class="corner corner-tl"></span><span class="corner corner-tr"></span>
           <span class="corner corner-bl"></span><span class="corner corner-br"></span>
           <span class="crosshair"></span>
         </div>
         <div class="visual-topline"><span>WORLD_01</span><span>REAL-TIME</span></div>
-        <div class="visual-caption">
-          <span class="caption-index">01</span>
-          <div><strong>Building the next world</strong><small>Unreal Engine / In development</small></div>
-        </div>
-        <div class="development-mark" role="img" aria-label="Pixel witch indicating a game currently in development">
-          <div class="witch-flight" aria-hidden="true">
-            <img class="pixel-witch" src="assets/pixel-witch-transparent.png" alt="">
+        <div class="carousel-controls" aria-label="Carousel controls">
+          <button class="carousel-arrow carousel-prev" type="button" aria-label="Previous game">←</button>
+          <div class="carousel-dots" role="group" aria-label="Choose a game">
+            <button class="carousel-dot is-active" type="button" aria-label="Show in-development game" aria-current="true"></button>
+            <button class="carousel-dot" type="button" aria-label="Show Battle Blaster"></button>
+            <button class="carousel-dot" type="button" aria-label="Show Shooter Sam"></button>
+            <button class="carousel-dot" type="button" aria-label="Show Fishing Game"></button>
           </div>
-          <div class="development-status" aria-hidden="true">
-            <span class="development-label">Development in progress</span>
-            <span class="progress-track"><span class="progress-fill"></span></span>
-          </div>
+          <button class="carousel-arrow carousel-next" type="button" aria-label="Next game">→</button>
         </div>
+        <span class="carousel-announcement sr-only" aria-live="polite">Showing slide 1 of 4</span>
       </div>
     </section>
 
@@ -223,6 +272,88 @@
     const updateHeader = () => header.classList.toggle('is-scrolled', window.scrollY > 24);
     updateHeader();
     window.addEventListener('scroll', updateHeader, { passive: true });
+
+    const carousel = document.querySelector('.game-carousel');
+    if (carousel) {
+      const slides = [...carousel.querySelectorAll('[data-slide]')];
+      const dots = [...carousel.querySelectorAll('.carousel-dot')];
+      const announcement = carousel.querySelector('.carousel-announcement');
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      let activeSlide = 0;
+      let carouselTimer;
+      let swipeStartX = null;
+
+      const showSlide = (index, announce = true) => {
+        const nextSlide = (index + slides.length) % slides.length;
+        const rawDistance = nextSlide - activeSlide;
+        const reverse = rawDistance < 0 && Math.abs(rawDistance) < slides.length - 1 || rawDistance === slides.length - 1;
+        carousel.classList.toggle('is-reversing', reverse);
+        activeSlide = nextSlide;
+        slides.forEach((slide, slideIndex) => {
+          const isActive = slideIndex === activeSlide;
+          slide.classList.toggle('is-active', isActive);
+          slide.setAttribute('aria-hidden', String(!isActive));
+          slide.querySelectorAll('a').forEach(link => link.tabIndex = isActive ? 0 : -1);
+          const video = slide.querySelector('video');
+          if (video) {
+            if (isActive && !reduceMotion) video.play().catch(() => {});
+            else video.pause();
+          }
+          if (isActive && !reduceMotion) {
+            const media = slide.querySelector(':scope > img, :scope > video');
+            if (media) {
+              media.style.animation = 'none';
+              void media.offsetWidth;
+              media.style.animation = '';
+            }
+          }
+        });
+        dots.forEach((dot, dotIndex) => {
+          const isActive = dotIndex === activeSlide;
+          dot.classList.toggle('is-active', isActive);
+          if (isActive) dot.setAttribute('aria-current', 'true');
+          else dot.removeAttribute('aria-current');
+        });
+        if (announcement && announce) {
+          announcement.textContent = document.documentElement.lang.startsWith('zh')
+            ? `正在显示第 ${activeSlide + 1} 页，共 ${slides.length} 页`
+            : `Showing slide ${activeSlide + 1} of ${slides.length}`;
+        }
+      };
+
+      const startCarousel = () => {
+        if (reduceMotion || carousel.matches(':hover') || carousel.contains(document.activeElement)) return;
+        clearInterval(carouselTimer);
+        carouselTimer = setInterval(() => showSlide(activeSlide + 1, false), 6500);
+      };
+
+      carousel.querySelector('.carousel-prev').addEventListener('click', () => { showSlide(activeSlide - 1); startCarousel(); });
+      carousel.querySelector('.carousel-next').addEventListener('click', () => { showSlide(activeSlide + 1); startCarousel(); });
+      dots.forEach((dot, index) => dot.addEventListener('click', () => { showSlide(index); startCarousel(); }));
+      carousel.addEventListener('keydown', event => {
+        if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
+          event.preventDefault();
+          showSlide(activeSlide + (event.key === 'ArrowRight' ? 1 : -1));
+          startCarousel();
+        }
+      });
+      carousel.addEventListener('mouseenter', () => clearInterval(carouselTimer));
+      carousel.addEventListener('mouseleave', startCarousel);
+      carousel.addEventListener('focusin', () => clearInterval(carouselTimer));
+      carousel.addEventListener('focusout', startCarousel);
+      carousel.addEventListener('pointerdown', event => {
+        if (event.pointerType !== 'mouse') swipeStartX = event.clientX;
+      });
+      carousel.addEventListener('pointerup', event => {
+        if (swipeStartX === null) return;
+        const distance = event.clientX - swipeStartX;
+        swipeStartX = null;
+        if (Math.abs(distance) > 42) showSlide(activeSlide + (distance < 0 ? 1 : -1));
+        startCarousel();
+      });
+      showSlide(0, false);
+      startCarousel();
+    }
 
     if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       const revealItems = document.querySelectorAll('.project-card, .graphics-callout, .about');
