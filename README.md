@@ -1,30 +1,25 @@
-# Personal Portfolio Website
+# Battle Blaster 2.0
 
-A modern, responsive personal portfolio website showcasing my work as a Product Manager, Research Assistant, and UI/UX Designer.
+Battle Blaster is a single-player tank shooter built with C++ and Blueprints in Unreal Engine. Drive through the arena, aim your turret, destroy enemy towers, and survive their attacks.
 
-## 🌐 Live Website
+## Download
 
-Visit the live site: [https://ririleyy.github.io](https://ririleyy.github.io)
+[**Download the latest Battle Blaster release**](https://github.com/Ririleyy/ririleyy.github.io/releases/latest)
 
-## 👋 About
+Choose the ZIP file for your operating system from the release assets:
 
-Hi, I'm Jiayi Li — a Product Manager with a background in UI/UX design, computer graphics, and systems engineering. I'm passionate about building products that blend thoughtful design with strong technical foundations, transforming ideas into user-centered experiences that drive business impact.
+- **Windows:** Download the Windows ZIP, extract it, and launch the included `.exe` file.
+- **macOS:** Download the macOS ZIP, extract it, and open the included application. If macOS blocks the unsigned build, right-click the application and select **Open**.
 
-Currently, I'm also a Research Assistant exploring the intersection of AI, visualization, and human-computer interaction, focusing on how intelligent systems can enhance creative and data-driven design workflows.
+Battle Blaster is free to download and play. No installation is required beyond extracting the ZIP file.
 
-## 📄 Content
+## Controls
 
-This portfolio includes:
-- **Professional Experience**: Product design work at PCCW Global and AI research
-- **Academic Background**: M.S. in Computer Science at Brown University, B.A. at Boston University
-- **Technical Projects**: Graphics programming, mesh processing, path tracing, and real-time rendering
-- **Resume**: Downloadable CV with full experience details
+- Move and steer the tank using the keyboard controls shown in game.
+- Aim the turret toward enemy towers.
+- Fire projectiles and eliminate every tower to complete the arena.
 
-## 📧 Contact
+## Requirements
 
-- **Email**: jiayi_li6@brown.edu
-- **GitHub**: [@Ririleyy](https://github.com/Ririleyy)
-
----
-
-*Built with HTML, CSS, and JavaScript*
+- A 64-bit Windows or macOS computer
+- Enough free storage to extract and run the packaged build

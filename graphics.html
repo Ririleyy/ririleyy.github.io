@@ -3,142 +3,107 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Graphics Projects - Jiayi Li</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <meta name="theme-color" content="#131F2F">
+  <meta name="description" content="Jiayi Li's computer graphics archive: mesh processing, deformation, path tracing, FEM, real-time rendering, and differentiable rendering.">
+  <title>Graphics Archive — Jiayi Li</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="graphics.css">
-  <link rel="icon" href="IMG_3815.jpg" type="image/jpeg">
+  <link rel="icon" href="image_3815.jpg" type="image/jpeg">
 </head>
 <body>
-  <header class="home-bar">
-    <div class="home-left"><a href="index.html" class="home-link">Home</a></div>
-    <div class="home-right">
-      <a href="Jiayi_Li_s_CV_fabrication.pdf" target="_blank" class="home-link">CV</a>
-      <a href="https://www.linkedin.com/in/jiayi-li-b345b7388/" target="_blank" class="home-link" style="display: inline-flex; align-items: center;"><img src="linkedin-in.svg" alt="LinkedIn" style="height: 0.95em; width: auto;"></a>
+  <div class="page-noise" aria-hidden="true"></div>
+  <header class="graphics-header">
+    <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">JL</span><span>Jiayi Li</span></a>
+    <nav class="graphics-nav" aria-label="Graphics navigation">
+      <a href="index.html#projects">Game Projects</a>
+      <a class="is-current" href="#top">Graphics</a>
+      <a href="index.html#about">About</a>
+    </nav>
+    <div class="header-tools">
+      <div class="language-switch" aria-label="Language">
+        <button type="button" data-lang="en" aria-pressed="true">EN</button><span>/</span><button type="button" data-lang="zh" aria-pressed="false">中文</button>
+      </div>
+      <a href="Jiayi-Li-Unreal-Engine-Resume.pdf" target="_blank" rel="noopener" class="resume-button">Resume ↓</a>
     </div>
   </header>
-  
-  <div id="container">
-    <div class="hero-section">
-      <h1 class="title">Projects</h1>
-      <p class="subtitle">Graphics and computational projects.</p>
+
+  <main id="top">
+    <section class="graphics-hero">
+      <div>
+        <p class="eyebrow">Technical archive / 2022—2026</p>
+        <h1>Graphics<br><em>under the hood.</em></h1>
+      </div>
+      <div class="hero-copy">
+        <p>A collection of rendering, geometry processing, deformation, and simulation projects that form the technical foundation of my real-time game development work.</p>
+        <div class="hero-meta"><span>06 project areas</span><span>C++ / OpenGL</span><span>Rendering / Simulation</span></div>
+      </div>
+    </section>
+
+    <section class="graphics-strip" aria-label="Graphics disciplines">
+      <span>Geometry</span><i></i><span>Rendering</span><i></i><span>Simulation</span><i></i><span>Real-time Systems</span>
+    </section>
+
+    <div class="archive-shell">
+      <section class="project-section" id="mesh">
+        <header class="project-heading"><div><span>01 / Geometry</span><h2>Mesh Processing</h2></div><p>Subdivision, simplification, and remeshing pipelines for controlling geometric detail and mesh quality.</p></header>
+        <div class="mesh-gallery">
+          <article><h3>Subdivision</h3><div class="comparison"><img src="Mesh/simplify.png" alt="Simplified mesh"><span>→</span><img src="Mesh/subdivision.png" alt="Subdivided mesh"></div></article>
+          <article><h3>Simplification</h3><div class="comparison"><img src="Mesh/cow.png" alt="Original cow mesh"><span>→</span><img src="Mesh/simplify_cow.png" alt="Simplified cow mesh"></div></article>
+          <article><h3>Remeshing</h3><div class="comparison"><img src="Mesh/bunny_simplify.png" alt="Simplified bunny mesh"><span>→</span><img src="Mesh/bunny_remesh.png" alt="Remeshed bunny"></div></article>
+        </div>
+      </section>
+
+      <section class="project-section" id="arap">
+        <header class="project-heading"><div><span>02 / Deformation</span><h2>ARAP</h2></div><p>As-Rigid-As-Possible deformation preserving local shape while producing responsive, controllable edits.</p></header>
+        <div class="video-gallery">
+          <video src="Arap/armadillo.mov" controls preload="metadata" aria-label="Armadillo ARAP deformation"></video>
+          <video src="Arap/teapot.mov" controls preload="metadata" aria-label="Teapot ARAP deformation"></video>
+          <video src="Arap/video3.mov" controls preload="metadata" aria-label="ARAP deformation demonstration"></video>
+        </div>
+      </section>
+
+      <section class="project-section" id="path-tracer">
+        <header class="project-heading"><div><span>03 / Light Transport</span><h2>Path Tracer</h2></div><p>Direct and global illumination, recursive reflection and refraction, glossy materials, and supersampling.</p></header>
+        <div class="image-grid">
+          <figure><img src="Path/cornell_box_direct_lighting_only.png" alt="Cornell Box direct lighting"><figcaption>Cornell Box / Direct light</figcaption></figure>
+          <figure><img src="Path/cornell_box_full_lighting.png" alt="Cornell Box full lighting"><figcaption>Cornell Box / Global light</figcaption></figure>
+          <figure><img src="Path/cornell_box_full_lighting_low_probability.png" alt="Cornell Box low probability"><figcaption>Low probability sampling</figcaption></figure>
+          <figure><img src="Path/glossy.png" alt="Glossy material rendering"><figcaption>Glossy material</figcaption></figure>
+          <figure><img src="Path/mirror.png" alt="Mirror reflection rendering"><figcaption>Mirror reflection</figcaption></figure>
+          <figure><img src="Path/refraction.png" alt="Refraction rendering"><figcaption>Refraction</figcaption></figure>
+        </div>
+      </section>
+
+      <section class="project-section" id="fem">
+        <header class="project-heading"><div><span>04 / Simulation</span><h2>Finite Element Method</h2></div><p>Physics-based deformation experiments using finite-element simulation across multiple test scenes.</p></header>
+        <div class="video-gallery">
+          <video src="FEM/video1.mov" controls preload="metadata" aria-label="Finite element simulation one"></video>
+          <video src="FEM/video2.mov" controls preload="metadata" aria-label="Finite element simulation two"></video>
+          <video src="FEM/video3.mov" controls preload="metadata" aria-label="Finite element simulation three"></video>
+        </div>
+      </section>
+
+      <section class="project-section featured-section" id="real-time">
+        <header class="project-heading"><div><span>05 / Real-time Engine</span><h2>Natural Environment Renderer</h2></div><p>A rasterization-based C++/OpenGL outdoor renderer combining a particle system, changing weather and sky states, and animated water.</p></header>
+        <div class="youtube-frame"><iframe src="https://www.youtube.com/embed/AM1mzVqbfr4?start=2159" title="Real-time natural environment renderer demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+      </section>
+
+      <section class="project-section diff-section" id="differentiable">
+        <header class="project-heading"><div><span>06 / Inverse Rendering</span><h2>Differentiable Rendering</h2></div><p>An implementation based on <cite>A Simple Approach to Differentiable Rendering of SDFs</cite> by Wang, Deng, Zhang, Jakob, and Marschner.</p></header>
+        <div class="diff-image"><img src="diffRender.png" alt="Differentiable rendering results"></div>
+      </section>
     </div>
-    
-    <main>
-      <section class="project-section">
-        <h2>Mesh Processing</h2>
-        <div class="project-content">
-          <p>Subdivision</p>
-          <div class="image-comparison">
-            <img src="Mesh/simplify.png" alt="Simplified mesh" class="comparison-image">
-            <span class="arrow">→</span>
-            <img src="Mesh/subdivision.png" alt="Subdivided mesh" class="comparison-image">
-          </div>
-          <p>Simplification</p>
-          <div class="image-comparison">
-            <img src="Mesh/cow.png" alt="Original mesh" class="comparison-image">
-            <span class="arrow">→</span>
-            <img src="Mesh/simplify_cow.png" alt="Simplified mesh" class="comparison-image">
-          </div>
-          <p>Remeshing</p>
-          <div class="image-comparison">
-            <img src="Mesh/bunny_simplify.png" alt="Remeshed bunny" class="comparison-image">
-            <span class="arrow">→</span>
-            <img src="Mesh/bunny_remesh.png" alt="Simplified bunny" class="comparison-image">
-          </div>
-        </div>
-      </section>
 
-      <section class="project-section">
-        <h2>ARAP (As-Rigid-As-Possible)</h2>
-        <div class="project-content">
-          <p>ARAP deformation</p>
-          <div class="video-gallery">
-            <video src="Arap/armadillo.mov" controls class="gallery-video"></video>
-            <video src="Arap/teapot.mov" controls class="gallery-video"></video>
-            <video src="Arap/video3.mov" controls class="gallery-video"></video>
-          </div>
-        </div>
-      </section>
+    <section class="game-cta">
+      <div><p>From graphics to gameplay</p><h2>See these foundations<br>inside my game projects.</h2></div>
+      <a href="index.html#projects">Explore game projects <span aria-hidden="true">→</span></a>
+    </section>
+  </main>
 
-      <section class="project-section">
-        <h2>Path Tracer</h2>
-        <div class="project-content">
-          <p>Path tracing and rendering</p>
-          <div class="image-grid">
-            <div class="grid-item">
-              <img src="Path/cornell_box_direct_lighting_only.png" alt="Cornell Box Direct Lighting" class="grid-image">
-              <p class="image-caption">Cornell Box Direct Lighting Only</p>
-            </div>
-            <div class="grid-item">
-              <img src="Path/cornell_box_full_lighting.png" alt="Cornell Box Full Lighting" class="grid-image">
-              <p class="image-caption">Cornell Box Full Lighting</p>
-            </div>
-            <div class="grid-item">
-              <img src="Path/cornell_box_full_lighting_low_probability.png" alt="Cornell Box Low Probability" class="grid-image">
-              <p class="image-caption">Cornell Box Full Lighting Low Probability</p>
-            </div>
-            <div class="grid-item">
-              <img src="Path/glossy.png" alt="Glossy" class="grid-image">
-              <p class="image-caption">Glossy</p>
-            </div>
-            <div class="grid-item">
-              <img src="Path/mirror.png" alt="Mirror" class="grid-image">
-              <p class="image-caption">Mirror</p>
-            </div>
-            <div class="grid-item">
-              <img src="Path/refraction.png" alt="Refraction" class="grid-image">
-              <p class="image-caption">Refraction</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="project-section">
-        <h2>FEM (Finite Element Method)</h2>
-        <div class="project-content">
-          <p>Finite element method simulations</p>
-          <div class="video-gallery">
-            <video src="FEM/video1.mov" controls class="gallery-video"></video>
-            <video src="FEM/video2.mov" controls class="gallery-video"></video>
-            <video src="FEM/video3.mov" controls class="gallery-video"></video>
-          </div>
-        </div>
-      </section>
-
-      <section class="project-section">
-        <h2>RealTime Rendering</h2>
-        <div class="project-content">
-          <p>A real-time natural environment renderer built with OpenGL, featuring procedurally generated infinite terrain, dynamic weather system, physically-based sky rendering, and animated water effects.</p>
-          <div class="youtube-container">
-            <iframe class="youtube-video" src="https://www.youtube.com/embed/AM1mzVqbfr4?start=2159" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </div>
-        </div>
-      </section>
-
-      <section class="project-section">
-        <h2>Differentiable Rendering</h2>
-        <div class="project-content">
-          <p>We mostly implemented A Simple Approach to Differentiable Rendering of SDFs, by Zichen Wang, Xi Deng, Ziyi Zhang, Wenzel Jakob, and Steve Marschner.s</p>
-          <div class="single-image-container">
-            <img src="diffRender.png" alt="Differentiable Rendering" class="single-image">
-          </div>
-        </div>
-      </section>
-
-      <footer class="contact-footer">
-        <a href="https://github.com/Ririleyy" target="_blank" class="contact-link">
-          <img src="link.svg" alt="GitHub" class="contact-icon">
-          <span>https://github.com/Ririleyy</span>
-        </a>
-        <a href="mailto:jiayi_li6@brown.edu" class="contact-link">
-          <img src="email.svg" alt="Email" class="contact-icon">
-          <span>jiayi_li6@brown.edu</span>
-        </a>
-      </footer>
-    </main>
-  </div>
+  <footer class="graphics-footer"><span>© <span id="year">2026</span> Jiayi Li</span><div><a href="https://github.com/Ririleyy" target="_blank" rel="noreferrer">GitHub ↗</a><a href="mailto:li.jiayi.game@outlook.com">Email ↗</a></div></footer>
+  <script src="language.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
-

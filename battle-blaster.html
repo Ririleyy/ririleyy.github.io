@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#131F2F">
+  <meta name="description" content="Battle Blaster — a single-player tank shooter built by Jiayi Li with C++, Blueprints, and Unreal Engine 5.6.">
+  <title>Battle Blaster — Jiayi Li</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="project.css">
+  <link rel="icon" href="image_3815.jpg" type="image/jpeg">
+</head>
+<body>
+  <header class="project-header">
+    <a class="back-link" href="index.html#projects"><span aria-hidden="true">←</span> All projects</a>
+    <div class="project-header-tools">
+      <div class="language-switch" aria-label="Language">
+        <button type="button" data-lang="en" aria-pressed="true">EN</button><span>/</span><button type="button" data-lang="zh" aria-pressed="false">中文</button>
+      </div>
+      <a class="project-resume" href="Jiayi-Li-Unreal-Engine-Resume.pdf" target="_blank" rel="noopener">Resume ↓</a>
+    </div>
+  </header>
+
+  <main class="project-main">
+    <section class="project-hero">
+      <div class="project-hero-copy">
+        <p class="project-kicker">Project 01 / Vehicle combat</p>
+        <h1>Battle<br>Blaster</h1>
+        <p>A single-player tank shooter built around responsive vehicle controls, reusable combat architecture, and predictable enemy tower behavior.</p>
+      </div>
+      <ul class="project-meta" aria-label="Project details">
+        <li><span>Engine</span><strong>Unreal Engine 5.6</strong></li>
+        <li><span>Stack</span><strong>C++ / Blueprints</strong></li>
+        <li><span>Genre</span><strong>Tank shooter</strong></li>
+        <li><span>Focus</span><strong>Gameplay systems</strong></li>
+      </ul>
+    </section>
+
+    <section class="demo-section" aria-labelledby="demo-title">
+      <div class="demo-frame">
+        <video controls playsinline preload="metadata" poster="Demo/battle-blaster-poster.jpg" aria-label="Full Battle Blaster gameplay demo">
+          <source src="Demo/battle-blaster-full-web.mp4" type="video/mp4">
+          Your browser does not support HTML5 video.
+        </video>
+      </div>
+      <div class="demo-caption"><strong id="demo-title">Full gameplay demo</strong><span>01:24 · Use the player controls for sound and fullscreen</span></div>
+    </section>
+
+    <div class="case-body">
+      <section class="overview" aria-labelledby="overview-title">
+        <div><p class="section-label">Overview / 01</p><h2 id="overview-title">Built for reusable combat.</h2></div>
+        <div class="overview-copy">
+          <p>Battle Blaster puts the player in direct control of a tank navigating an arena of hostile towers.</p>
+          <p>I developed the project with C++ and Blueprints, using a shared pawn combat architecture to keep turret rotation, projectile spawning, and damage handling consistent across the player tank and enemy tower variants.</p>
+          <p>The movement and targeting systems emphasize readable, predictable behavior: collision-safe traversal for the tank, smooth constant-rate tracking for towers, and timer-gated projectile firing.</p>
+        </div>
+      </section>
+
+      <section class="systems" aria-labelledby="systems-title">
+        <div class="systems-header">
+          <div><p class="section-label">Engineering / 02</p><h2 id="systems-title">Core systems</h2></div>
+          <p>The implementation separates shared combat responsibilities from pawn-specific movement and behavior, making the project easier to extend without duplicating core logic.</p>
+        </div>
+        <div class="systems-grid">
+          <article class="system-card"><span class="index">01</span><h3>Shared pawn architecture</h3><p>Extracted turret rotation, projectile spawning, and damage handling into reusable logic shared by tank and tower variants.</p></article>
+          <article class="system-card"><span class="index">02</span><h3>Swept tank movement</h3><p>Converted throttle and steering input into swept translation and rotation against a box-based collision root to prevent tunneling and invalid overlaps.</p></article>
+          <article class="system-card"><span class="index">03</span><h3>Turret targeting</h3><p>Calculated target direction and interpolated turret rotation at a constant rate, producing smooth and predictable enemy tracking.</p></article>
+          <article class="system-card"><span class="index">04</span><h3>Firing cadence</h3><p>Gated projectile spawning with timers so enemy attacks remain consistent, readable, and easy to tune.</p></article>
+        </div>
+      </section>
+    </div>
+
+    <a class="next-project" href="shooter-sam.html"><div><small>Next case study</small><strong>Shooter Sam</strong></div><span aria-hidden="true">→</span></a>
+  </main>
+  <footer class="project-footer"><span>© <span data-year>2026</span> Jiayi Li</span><a href="Jiayi-Li-Unreal-Engine-Resume.pdf" target="_blank">View Resume ↗</a></footer>
+  <script src="language.js"></script>
+  <script>document.querySelector('[data-year]').textContent = new Date().getFullYear();</script>
+</body>
+</html>
