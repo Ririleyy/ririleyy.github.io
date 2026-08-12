@@ -15,6 +15,41 @@
   <link rel="icon" href="image_3815.jpg" type="image/jpeg">
 </head>
 <body>
+  <div class="pixel-field" id="pixelField" aria-hidden="true"></div>
+
+  <div class="wand-intro" id="wandIntro" aria-hidden="true">
+    <div class="wand-flight">
+      <img class="wand-witch" src="assets/pixel-witch-transparent.png" alt="">
+    </div>
+    <div class="burst-screenflash" aria-hidden="true"></div>
+    <div class="wand-burst" aria-hidden="true">
+      <span class="burst-core"></span>
+      <span class="burst-ring"></span>
+      <span class="burst-ray" style="--ra:0deg"></span>
+      <span class="burst-ray" style="--ra:45deg"></span>
+      <span class="burst-ray" style="--ra:90deg"></span>
+      <span class="burst-ray" style="--ra:135deg"></span>
+      <span class="burst-ray" style="--ra:180deg"></span>
+      <span class="burst-ray" style="--ra:225deg"></span>
+      <span class="burst-ray" style="--ra:270deg"></span>
+      <span class="burst-ray" style="--ra:315deg"></span>
+      <span class="burst-heart" style="--hx:-34vw; --hy:-30vh; --hd:0s; --hs:1"></span>
+      <span class="burst-heart" style="--hx:38vw; --hy:-24vh; --hd:.05s; --hs:.85"></span>
+      <span class="burst-heart" style="--hx:-18vw; --hy:-40vh; --hd:.1s; --hs:.7"></span>
+      <span class="burst-heart" style="--hx:22vw; --hy:-42vh; --hd:.15s; --hs:.95"></span>
+      <span class="burst-heart" style="--hx:-42vw; --hy:-10vh; --hd:.2s; --hs:.75"></span>
+      <span class="burst-heart" style="--hx:44vw; --hy:-8vh; --hd:.08s; --hs:.65"></span>
+      <span class="burst-heart" style="--hx:-8vw; --hy:36vh; --hd:.12s; --hs:.8"></span>
+      <span class="burst-heart" style="--hx:12vw; --hy:38vh; --hd:.22s; --hs:.6"></span>
+      <span class="burst-glint" style="--gx:-46vw; --gy:12vh; --gd:0s"></span>
+      <span class="burst-glint" style="--gx:48vw; --gy:-18vh; --gd:.12s"></span>
+      <span class="burst-glint" style="--gx:-22vw; --gy:34vh; --gd:.2s"></span>
+      <span class="burst-glint" style="--gx:28vw; --gy:38vh; --gd:.06s"></span>
+      <span class="burst-glint" style="--gx:-6vw; --gy:-38vh; --gd:.18s"></span>
+      <span class="burst-glint" style="--gx:14vw; --gy:-30vh; --gd:.02s"></span>
+    </div>
+  </div>
+
   <div class="page-noise" aria-hidden="true"></div>
 
   <header class="site-header">
@@ -50,65 +85,73 @@
       </div>
 
       <div class="hero-visual game-carousel" aria-label="Featured game carousel" aria-roledescription="carousel" tabindex="0">
-        <div class="carousel-track">
-          <article class="carousel-slide is-active" data-slide aria-hidden="false">
-            <img src="assets/in-development-game.png" alt="Moonlit gothic arches overlooking a fantasy castle">
-            <div class="visual-shade" aria-hidden="true"></div>
-            <div class="visual-caption">
-              <span class="caption-index">01</span>
-              <div><strong>Building the next world</strong><small>Unreal Engine / In development</small></div>
-            </div>
-            <div class="development-mark" role="img" aria-label="Pixel witch indicating a game currently in development">
-              <div class="witch-flight" aria-hidden="true">
-                <img class="pixel-witch" src="assets/pixel-witch-transparent.png" alt="">
+        <div class="carousel-index" aria-hidden="true"><span class="carousel-index-current">01</span><span class="carousel-index-sep">/</span><span class="carousel-index-total">04</span></div>
+
+        <div class="carousel-stage">
+          <div class="carousel-track" data-track>
+            <article class="carousel-card is-active" data-card data-index="0" aria-hidden="false">
+              <div class="card-face">
+                <img src="assets/in-development-game.png" alt="Moonlit gothic arches overlooking a fantasy castle">
+                <div class="card-shade" aria-hidden="true"></div>
+                <div class="card-caption">
+                  <span class="caption-index">01</span>
+                  <div><strong>Building the next world</strong><small>Unreal Engine / In development</small></div>
+                </div>
+                <div class="development-mark" role="img" aria-label="Pixel witch indicating a game currently in development">
+                  <div class="witch-flight" aria-hidden="true">
+                    <img class="pixel-witch" src="assets/pixel-witch-transparent.png" alt="">
+                  </div>
+                  <div class="development-status" aria-hidden="true">
+                    <span class="development-label">Development in progress</span>
+                    <span class="progress-track"><span class="progress-fill"></span></span>
+                  </div>
+                </div>
               </div>
-              <div class="development-status" aria-hidden="true">
-                <span class="development-label">Development in progress</span>
-                <span class="progress-track"><span class="progress-fill"></span></span>
+            </article>
+
+            <article class="carousel-card" data-card data-index="1" aria-hidden="true">
+              <div class="card-face">
+                <video muted loop playsinline preload="metadata" poster="Demo/battle-blaster-poster.jpg" aria-hidden="true">
+                  <source src="Demo/battle-blaster-preview.mp4" type="video/mp4">
+                </video>
+                <div class="card-shade" aria-hidden="true"></div>
+                <a class="card-caption carousel-project-link" href="battle-blaster.html" aria-label="Open the Battle Blaster case study" tabindex="-1">
+                  <span class="caption-index">02</span>
+                  <div><strong>Battle Blaster</strong><small>Unreal Engine / Tank combat</small></div>
+                </a>
               </div>
-            </div>
-          </article>
+            </article>
 
-          <article class="carousel-slide" data-slide aria-hidden="true">
-            <video muted loop playsinline preload="metadata" poster="Demo/battle-blaster-poster.jpg" aria-hidden="true">
-              <source src="Demo/battle-blaster-preview.mp4" type="video/mp4">
-            </video>
-            <div class="visual-shade" aria-hidden="true"></div>
-            <a class="visual-caption carousel-project-link" href="battle-blaster.html" aria-label="Open the Battle Blaster case study">
-              <span class="caption-index">02</span>
-              <div><strong>Battle Blaster</strong><small>Unreal Engine / Tank combat</small></div>
-            </a>
-          </article>
+            <article class="carousel-card" data-card data-index="2" aria-hidden="true">
+              <div class="card-face">
+                <video muted loop playsinline preload="metadata" poster="Demo/shooter-sam-poster.jpg" aria-hidden="true">
+                  <source src="Demo/shooter-sam-preview.mp4" type="video/mp4">
+                </video>
+                <div class="card-shade" aria-hidden="true"></div>
+                <a class="card-caption carousel-project-link" href="shooter-sam.html" aria-label="Open the Shooter Sam case study" tabindex="-1">
+                  <span class="caption-index">03</span>
+                  <div><strong>Shooter Sam</strong><small>Unreal Engine / Tactical shooter</small></div>
+                </a>
+              </div>
+            </article>
 
-          <article class="carousel-slide" data-slide aria-hidden="true">
-            <video muted loop playsinline preload="metadata" poster="Demo/shooter-sam-poster.jpg" aria-hidden="true">
-              <source src="Demo/shooter-sam-preview.mp4" type="video/mp4">
-            </video>
-            <div class="visual-shade" aria-hidden="true"></div>
-            <a class="visual-caption carousel-project-link" href="shooter-sam.html" aria-label="Open the Shooter Sam case study">
-              <span class="caption-index">03</span>
-              <div><strong>Shooter Sam</strong><small>Unreal Engine / Tactical shooter</small></div>
-            </a>
-          </article>
-
-          <article class="carousel-slide" data-slide aria-hidden="true">
-            <video muted loop playsinline preload="metadata" poster="Demo/fishing-engine-poster.jpg" aria-hidden="true">
-              <source src="Demo/fishing-engine-preview.mp4" type="video/mp4">
-            </video>
-            <div class="visual-shade" aria-hidden="true"></div>
-            <a class="visual-caption carousel-project-link" href="fishing-engine.html" aria-label="Open the Fishing Game case study">
-              <span class="caption-index">04</span>
-              <div><strong>Fishing Game</strong><small>Custom C++ / OpenGL engine</small></div>
-            </a>
-          </article>
+            <article class="carousel-card" data-card data-index="3" aria-hidden="true">
+              <div class="card-face">
+                <video muted loop playsinline preload="metadata" poster="Demo/fishing-engine-poster.jpg" aria-hidden="true">
+                  <source src="Demo/fishing-engine-preview.mp4" type="video/mp4">
+                </video>
+                <div class="card-shade" aria-hidden="true"></div>
+                <a class="card-caption carousel-project-link" href="fishing-engine.html" aria-label="Open the Fishing Game case study" tabindex="-1">
+                  <span class="caption-index">04</span>
+                  <div><strong>Fishing Game</strong><small>Custom C++ / OpenGL engine</small></div>
+                </a>
+              </div>
+            </article>
+          </div>
         </div>
 
-        <div class="viewfinder" aria-hidden="true">
-          <span class="corner corner-tl"></span><span class="corner corner-tr"></span>
-          <span class="corner corner-bl"></span><span class="corner corner-br"></span>
-          <span class="crosshair"></span>
-        </div>
-        <div class="visual-topline"><span>WORLD_01</span><span>REAL-TIME</span></div>
+        <div class="carousel-hint" data-hint><span>Drag to explore</span><i aria-hidden="true">↔</i></div>
+
         <div class="carousel-controls" aria-label="Carousel controls">
           <button class="carousel-arrow carousel-prev" type="button" aria-label="Previous game">←</button>
           <div class="carousel-dots" role="group" aria-label="Choose a game">
@@ -266,6 +309,76 @@
 
   <script src="language.js"></script>
   <script>
+    (() => {
+      const field = document.getElementById('pixelField');
+      if (!field) return;
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const colors = ['var(--ink)', 'var(--accent)', 'var(--support)'];
+      const count = 24;
+      const frag = document.createDocumentFragment();
+      for (let i = 0; i < count; i++) {
+        const px = document.createElement('span');
+        const size = 1 + Math.round(Math.random());
+        px.style.width = size + 'px';
+        px.style.height = size + 'px';
+        px.style.left = (Math.random() * 100).toFixed(2) + 'vw';
+        px.style.top = (Math.random() * 100).toFixed(2) + 'vh';
+        px.style.background = colors[i % colors.length];
+        px.style.opacity = (0.06 + Math.random() * 0.16).toFixed(2);
+        if (!reduceMotion) {
+          const dur = (3.5 + Math.random() * 3) + 's';
+          const delay = (Math.random() * 4).toFixed(2) + 's';
+          px.style.animation = `pixel-twinkle ${dur} ease-in-out ${delay} infinite`;
+        }
+        frag.appendChild(px);
+      }
+      field.appendChild(frag);
+    })();
+
+    (() => {
+      const DEBUG_ALWAYS_PLAY = true; // TEMP: set back to false to restore the once-per-hour gate
+      const intro = document.getElementById('wandIntro');
+      if (!intro) return;
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const HOUR = 60 * 60 * 1000;
+      const KEY = 'jl_wand_intro_ts';
+      let shouldPlay = DEBUG_ALWAYS_PLAY;
+      if (!DEBUG_ALWAYS_PLAY) {
+        try {
+          const last = Number(localStorage.getItem(KEY) || 0);
+          shouldPlay = Date.now() - last > HOUR;
+          if (shouldPlay) localStorage.setItem(KEY, String(Date.now()));
+        } catch (err) {
+          shouldPlay = true;
+        }
+      }
+      if (!shouldPlay || reduceMotion) {
+        intro.remove();
+        return;
+      }
+
+      const witchImg = intro.querySelector('.wand-witch');
+      const spawnDrop = () => {
+        if (!witchImg || !witchImg.isConnected) return;
+        const rect = witchImg.getBoundingClientRect();
+        const drop = document.createElement('span');
+        drop.className = 'wand-drop';
+        drop.style.left = (rect.left + rect.width * 0.12) + 'px';
+        drop.style.top = (rect.top + rect.height * 0.82) + 'px';
+        document.body.appendChild(drop);
+        drop.addEventListener('animationend', () => drop.remove());
+        setTimeout(() => drop.remove(), 900);
+      };
+      setTimeout(spawnDrop, 900);
+      setTimeout(spawnDrop, 1750);
+      setTimeout(spawnDrop, 2600);
+
+      intro.addEventListener('animationend', event => {
+        if (event.target === intro) intro.remove();
+      });
+      setTimeout(() => intro.remove(), 4500);
+    })();
+
     document.getElementById('year').textContent = new Date().getFullYear();
 
     const header = document.querySelector('.site-header');
@@ -275,84 +388,207 @@
 
     const carousel = document.querySelector('.game-carousel');
     if (carousel) {
-      const slides = [...carousel.querySelectorAll('[data-slide]')];
+      const track = carousel.querySelector('[data-track]');
+      const stage = carousel.querySelector('.carousel-stage');
+      const cards = [...carousel.querySelectorAll('[data-card]')];
       const dots = [...carousel.querySelectorAll('.carousel-dot')];
       const announcement = carousel.querySelector('.carousel-announcement');
+      const hint = carousel.querySelector('[data-hint]');
+      const indexCurrent = carousel.querySelector('.carousel-index-current');
+      const n = cards.length;
       const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      let activeSlide = 0;
-      let carouselTimer;
-      let swipeStartX = null;
 
-      const showSlide = (index, announce = true) => {
-        const nextSlide = (index + slides.length) % slides.length;
-        const rawDistance = nextSlide - activeSlide;
-        const reverse = rawDistance < 0 && Math.abs(rawDistance) < slides.length - 1 || rawDistance === slides.length - 1;
-        carousel.classList.toggle('is-reversing', reverse);
-        activeSlide = nextSlide;
-        slides.forEach((slide, slideIndex) => {
-          const isActive = slideIndex === activeSlide;
-          slide.classList.toggle('is-active', isActive);
-          slide.setAttribute('aria-hidden', String(!isActive));
-          slide.querySelectorAll('a').forEach(link => link.tabIndex = isActive ? 0 : -1);
-          const video = slide.querySelector('video');
+      let floatIndex = 0;
+      let activeIndex = 0;
+      let dragging = false;
+      let dragStartX = 0;
+      let dragStartFloat = 0;
+      let lastMoveX = 0;
+      let lastMoveTime = 0;
+      let velocity = 0;
+      let rafId = null;
+      let autoplayTimer = null;
+
+      const clamp = (v, min, max) => Math.max(min, Math.min(max, v));
+      const pad2 = num => String(num).padStart(2, '0');
+
+      const shortestOffset = (i, f) => {
+        let raw = (i - f) % n;
+        if (raw > n / 2) raw -= n;
+        if (raw < -n / 2) raw += n;
+        return raw;
+      };
+
+      const syncActiveUI = () => {
+        cards.forEach((card, i) => {
+          const isActive = i === activeIndex;
+          card.setAttribute('aria-hidden', String(!isActive));
+          const link = card.querySelector('a');
+          if (link) link.tabIndex = isActive ? 0 : -1;
+          const video = card.querySelector('video');
           if (video) {
             if (isActive && !reduceMotion) video.play().catch(() => {});
             else video.pause();
           }
-          if (isActive && !reduceMotion) {
-            const media = slide.querySelector(':scope > img, :scope > video');
-            if (media) {
-              media.style.animation = 'none';
-              void media.offsetWidth;
-              media.style.animation = '';
-            }
-          }
         });
-        dots.forEach((dot, dotIndex) => {
-          const isActive = dotIndex === activeSlide;
+        dots.forEach((dot, i) => {
+          const isActive = i === activeIndex;
           dot.classList.toggle('is-active', isActive);
           if (isActive) dot.setAttribute('aria-current', 'true');
           else dot.removeAttribute('aria-current');
         });
-        if (announcement && announce) {
+        if (indexCurrent) indexCurrent.textContent = pad2(activeIndex + 1);
+        if (announcement) {
           announcement.textContent = document.documentElement.lang.startsWith('zh')
-            ? `正在显示第 ${activeSlide + 1} 页，共 ${slides.length} 页`
-            : `Showing slide ${activeSlide + 1} of ${slides.length}`;
+            ? `正在显示第 ${activeIndex + 1} 页，共 ${n} 页`
+            : `Showing slide ${activeIndex + 1} of ${n}`;
         }
       };
 
-      const startCarousel = () => {
-        if (reduceMotion || carousel.matches(':hover') || carousel.contains(document.activeElement)) return;
-        clearInterval(carouselTimer);
-        carouselTimer = setInterval(() => showSlide(activeSlide + 1, false), 6500);
+      const render = () => {
+        let nearest = 0;
+        let nearestDist = Infinity;
+        cards.forEach((card, i) => {
+          const offset = shortestOffset(i, floatIndex);
+          const dist = Math.abs(offset);
+          if (dist < nearestDist) { nearestDist = dist; nearest = i; }
+          const clampedDist = Math.min(dist, 2.2);
+          const translateX = offset * 46;
+          const translateZ = -clampedDist * 190;
+          const rotateY = clamp(-offset * 30, -68, 68);
+          const scale = 1 - Math.min(dist, 2) * 0.13;
+          const opacity = Math.max(0, 1 - clampedDist / 2.1);
+          const brightness = (1 - Math.min(dist, 2) * 0.3).toFixed(2);
+          const saturate = (1 - Math.min(dist, 2) * 0.32).toFixed(2);
+          card.style.transform = `translate3d(${translateX}%, 0, ${translateZ}px) rotateY(${rotateY}deg) scale(${scale.toFixed(3)})`;
+          card.style.opacity = opacity.toFixed(3);
+          card.style.filter = `brightness(${brightness}) saturate(${saturate})`;
+          card.style.zIndex = String(Math.round(1000 - clampedDist * 10));
+          card.classList.toggle('is-active', dist < 0.001);
+          card.style.pointerEvents = dist < 1.35 ? 'auto' : 'none';
+        });
+        if (nearest !== activeIndex) {
+          activeIndex = nearest;
+          syncActiveUI();
+        }
       };
 
-      carousel.querySelector('.carousel-prev').addEventListener('click', () => { showSlide(activeSlide - 1); startCarousel(); });
-      carousel.querySelector('.carousel-next').addEventListener('click', () => { showSlide(activeSlide + 1); startCarousel(); });
-      dots.forEach((dot, index) => dot.addEventListener('click', () => { showSlide(index); startCarousel(); }));
+      const animateTo = (target, duration = 560) => {
+        cancelAnimationFrame(rafId);
+        const start = floatIndex;
+        const delta = target - start;
+        if (Math.abs(delta) < 0.0005) { floatIndex = target; render(); return; }
+        const startTime = performance.now();
+        const ease = t => 1 - Math.pow(1 - t, 3);
+        const step = now => {
+          const t = clamp((now - startTime) / duration, 0, 1);
+          floatIndex = start + delta * ease(t);
+          render();
+          if (t < 1) rafId = requestAnimationFrame(step);
+          else floatIndex = target;
+        };
+        rafId = requestAnimationFrame(step);
+      };
+
+      const goTo = indexTarget => {
+        const current = Math.round(floatIndex);
+        let diff = (((indexTarget - current) % n) + n) % n;
+        if (diff > n / 2) diff -= n;
+        animateTo(current + diff);
+      };
+
+      const stopAutoplay = () => clearInterval(autoplayTimer);
+      const startAutoplay = () => {
+        if (reduceMotion) return;
+        stopAutoplay();
+        autoplayTimer = setInterval(() => {
+          if (dragging || carousel.matches(':hover') || carousel.contains(document.activeElement)) return;
+          animateTo(Math.round(floatIndex) + 1);
+        }, 6000);
+      };
+
+      const dismissHint = () => hint && hint.classList.add('is-dismissed');
+
+      track.addEventListener('pointerdown', event => {
+        dragging = true;
+        dragStartX = event.clientX;
+        dragStartFloat = floatIndex;
+        lastMoveX = event.clientX;
+        lastMoveTime = performance.now();
+        velocity = 0;
+        track.classList.add('is-grabbing');
+        track.setPointerCapture(event.pointerId);
+        cancelAnimationFrame(rafId);
+      });
+
+      track.addEventListener('pointermove', event => {
+        if (!dragging) return;
+        dismissHint();
+        const perSlide = carousel.clientWidth * 0.42;
+        const dx = event.clientX - dragStartX;
+        floatIndex = dragStartFloat - dx / perSlide;
+        const now = performance.now();
+        const dt = now - lastMoveTime;
+        if (dt > 8) {
+          velocity = (event.clientX - lastMoveX) / dt;
+          lastMoveTime = now;
+          lastMoveX = event.clientX;
+        }
+        render();
+      });
+
+      const endDrag = event => {
+        if (!dragging) return;
+        dragging = false;
+        track.classList.remove('is-grabbing');
+        if (event && event.pointerId !== undefined) {
+          try { track.releasePointerCapture(event.pointerId); } catch (err) {}
+        }
+        const perSlide = carousel.clientWidth * 0.42;
+        const projected = floatIndex - (velocity * 140) / perSlide;
+        animateTo(Math.round(projected));
+      };
+
+      track.addEventListener('pointerup', endDrag);
+      track.addEventListener('pointercancel', endDrag);
+
+      cards.forEach((card, i) => {
+        card.addEventListener('click', event => {
+          if (i === activeIndex) return;
+          event.preventDefault();
+          dismissHint();
+          goTo(i);
+        });
+      });
+
+      carousel.querySelector('.carousel-prev').addEventListener('click', () => { dismissHint(); goTo(Math.round(floatIndex) - 1); });
+      carousel.querySelector('.carousel-next').addEventListener('click', () => { dismissHint(); goTo(Math.round(floatIndex) + 1); });
+      dots.forEach((dot, index) => dot.addEventListener('click', () => { dismissHint(); goTo(index); }));
+
       carousel.addEventListener('keydown', event => {
         if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
           event.preventDefault();
-          showSlide(activeSlide + (event.key === 'ArrowRight' ? 1 : -1));
-          startCarousel();
+          dismissHint();
+          goTo(Math.round(floatIndex) + (event.key === 'ArrowRight' ? 1 : -1));
         }
       });
-      carousel.addEventListener('mouseenter', () => clearInterval(carouselTimer));
-      carousel.addEventListener('mouseleave', startCarousel);
-      carousel.addEventListener('focusin', () => clearInterval(carouselTimer));
-      carousel.addEventListener('focusout', startCarousel);
-      carousel.addEventListener('pointerdown', event => {
-        if (event.pointerType !== 'mouse') swipeStartX = event.clientX;
-      });
-      carousel.addEventListener('pointerup', event => {
-        if (swipeStartX === null) return;
-        const distance = event.clientX - swipeStartX;
-        swipeStartX = null;
-        if (Math.abs(distance) > 42) showSlide(activeSlide + (distance < 0 ? 1 : -1));
-        startCarousel();
-      });
-      showSlide(0, false);
-      startCarousel();
+
+      if (!reduceMotion && stage) {
+        carousel.addEventListener('pointermove', event => {
+          if (dragging) return;
+          const rect = carousel.getBoundingClientRect();
+          const px = (event.clientX - rect.left) / rect.width - 0.5;
+          const py = (event.clientY - rect.top) / rect.height - 0.5;
+          stage.style.transform = `rotateX(${(-py * 7).toFixed(2)}deg) rotateY(${(px * 7).toFixed(2)}deg)`;
+        });
+        carousel.addEventListener('pointerleave', () => {
+          stage.style.transform = 'rotateX(0deg) rotateY(0deg)';
+        });
+      }
+
+      render();
+      syncActiveUI();
+      startAutoplay();
     }
 
     if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
