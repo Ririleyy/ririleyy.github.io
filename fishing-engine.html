@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#131F2F">
+  <meta name="description" content="Fishing Game — a stylized fishing experience built by Jiayi Li in a custom C++ and OpenGL rendering engine.">
+  <title>Fishing Game &amp; Custom Engine — Jiayi Li</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="project.css">
+  <link rel="icon" href="image_3815.jpg" type="image/jpeg">
+</head>
+<body>
+  <header class="project-header">
+    <a class="back-link" href="index.html#projects"><span aria-hidden="true">←</span> All projects</a>
+    <div class="project-header-tools">
+      <div class="language-switch" aria-label="Language">
+        <button type="button" data-lang="en" aria-pressed="true">EN</button><span>/</span><button type="button" data-lang="zh" aria-pressed="false">中文</button>
+      </div>
+      <a class="project-resume" href="Jiayi-Li-Unreal-Engine-Resume.pdf" target="_blank" rel="noopener">Resume ↓</a>
+    </div>
+  </header>
+
+  <main class="project-main">
+    <section class="project-hero">
+      <div class="project-hero-copy">
+        <p class="project-kicker">Project 03 / Custom engine</p>
+        <h1>Fishing<br>Game</h1>
+        <p>A stylized outdoor fishing game created with my own C++/OpenGL rendering engine and a collection of real-time world systems.</p>
+      </div>
+      <ul class="project-meta" aria-label="Project details">
+        <li><span>Engine</span><strong>Custom C++ / OpenGL</strong></li>
+        <li><span>Stack</span><strong>C++ / OpenGL / GLSL</strong></li>
+        <li><span>Genre</span><strong>Fishing game</strong></li>
+        <li><span>Focus</span><strong>Rendering / World systems</strong></li>
+      </ul>
+    </section>
+
+    <section class="demo-section" aria-labelledby="demo-title">
+      <div class="demo-frame">
+        <video controls playsinline preload="metadata" poster="Demo/fishing-engine-poster.jpg" aria-label="Full Fishing Game and custom engine demo">
+          <source src="Demo/fishing-engine-full-web.mp4" type="video/mp4">
+          Your browser does not support HTML5 video.
+        </video>
+      </div>
+      <div class="demo-caption"><strong id="demo-title">Full gameplay demo</strong><span>02:08 · Use player controls for sound and fullscreen</span></div>
+    </section>
+
+    <div class="case-body">
+      <section class="overview" aria-labelledby="overview-title">
+        <div><p class="section-label">Project overview / 01</p><h2 id="overview-title">An engine built into a world.</h2></div>
+        <div class="overview-copy">
+          <p>This fishing game is a complete interactive project built on a focused custom C++/OpenGL engine.</p>
+          <p>I built the engine around a rasterization pipeline using VAOs and VBOs to organize and draw the game's geometry in real time.</p>
+          <p>For the game world, I combined a particle system, changing weather, a dynamic sky, and animated water with the core fishing loop and collection feedback.</p>
+        </div>
+      </section>
+
+      <section class="systems" aria-labelledby="systems-title">
+        <div class="systems-header">
+          <div><p class="section-label">Engineering / 02</p><h2 id="systems-title">Core systems</h2></div>
+          <p>The project connects a focused rasterization pipeline with environment systems and gameplay inside one custom engine.</p>
+        </div>
+        <div class="systems-grid">
+          <article class="system-card"><span class="index">01</span><h3>Custom engine foundation</h3><p>Built the game on a custom C++/OpenGL engine with a focused real-time scene and gameplay structure.</p></article>
+          <article class="system-card"><span class="index">02</span><h3>Rasterization pipeline</h3><p>Used VAOs and VBOs to manage mesh data and render the game's geometry through a conventional OpenGL rasterization workflow.</p></article>
+          <article class="system-card"><span class="index">03</span><h3>Particle system</h3><p>Built a reusable particle system for real-time environmental effects and visual feedback throughout the fishing experience.</p></article>
+          <article class="system-card"><span class="index">04</span><h3>Weather &amp; sky</h3><p>Connected changing weather and sky states to give the environment visible time and atmosphere changes.</p></article>
+          <article class="system-card"><span class="index">05</span><h3>Animated water</h3><p>Created a responsive water surface that supports the visual identity and moment-to-moment fishing experience.</p></article>
+          <article class="system-card"><span class="index">06</span><h3>Fishing gameplay</h3><p>Integrated casting, timing, collection feedback, changing weather, and fish discovery into the custom engine environment.</p></article>
+        </div>
+      </section>
+    </div>
+
+    <a class="next-project" href="battle-blaster.html"><div><small>Next case study</small><strong>Battle Blaster</strong></div><span aria-hidden="true">→</span></a>
+  </main>
+  <footer class="project-footer"><span>© <span data-year>2026</span> Jiayi Li</span><a href="Jiayi-Li-Unreal-Engine-Resume.pdf" target="_blank">View Resume ↗</a></footer>
+  <script src="language.js"></script>
+  <script>document.querySelector('[data-year]').textContent = new Date().getFullYear();</script>
+</body>
+</html>

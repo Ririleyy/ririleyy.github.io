@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#131F2F">
+  <meta name="description" content="Shooter Sam — a tactical third-person shooter built by Jiayi Li with C++, Blueprints, and Unreal Engine 5.6.">
+  <title>Shooter Sam — Jiayi Li</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="project.css">
+  <link rel="icon" href="image_3815.jpg" type="image/jpeg">
+</head>
+<body>
+  <header class="project-header">
+    <a class="back-link" href="index.html#projects"><span aria-hidden="true">←</span> All projects</a>
+    <div class="project-header-tools">
+      <div class="language-switch" aria-label="Language">
+        <button type="button" data-lang="en" aria-pressed="true">EN</button><span>/</span><button type="button" data-lang="zh" aria-pressed="false">中文</button>
+      </div>
+      <a class="project-resume" href="Jiayi-Li-Unreal-Engine-Resume.pdf" target="_blank" rel="noopener">Resume ↓</a>
+    </div>
+  </header>
+
+  <main class="project-main">
+    <section class="project-hero">
+      <div class="project-hero-copy">
+        <p class="project-kicker">Project 02 / Tactical AI</p>
+        <h1>Shooter<br>Sam</h1>
+        <p>A single-player third-person shooter centered on coordinated enemy intelligence, objective-driven levels, and event-based gameplay systems.</p>
+      </div>
+      <ul class="project-meta" aria-label="Project details">
+        <li><span>Engine</span><strong>Unreal Engine 5.6</strong></li>
+        <li><span>Stack</span><strong>C++ / Blueprints</strong></li>
+        <li><span>Genre</span><strong>Third-person shooter</strong></li>
+        <li><span>Focus</span><strong>AI / objectives</strong></li>
+      </ul>
+    </section>
+
+    <section class="demo-section" aria-labelledby="demo-title">
+      <div class="demo-frame">
+        <video controls playsinline preload="metadata" poster="Demo/shooter-sam-poster.jpg" aria-label="Full Shooter Sam gameplay demo">
+          <source src="Demo/shooter-sam-full-web.mp4" type="video/mp4">
+          Your browser does not support HTML5 video.
+        </video>
+      </div>
+      <div class="demo-caption"><strong id="demo-title">Full gameplay demo</strong><span>00:32 · Use the player controls for sound and fullscreen</span></div>
+    </section>
+
+    <div class="case-body">
+      <section class="overview" aria-labelledby="overview-title">
+        <div><p class="section-label">Overview / 01</p><h2 id="overview-title">Enemies that investigate.</h2></div>
+        <div class="overview-copy">
+          <p>Shooter Sam is a tactical third-person shooter where enemy squads react to what they can see and what they can hear.</p>
+          <p>I developed layered Behavior Tree states for patrol, investigation, pursuit, and attack. Gunfire becomes shared last-known position and direction data, letting nearby AI coordinate an investigation without giving them impossible knowledge through walls.</p>
+          <p>The level structure is driven by an event-based objective framework, while reusable components and targeted runtime checks keep health UI and AI updates efficient.</p>
+        </div>
+      </section>
+
+      <section class="systems" aria-labelledby="systems-title">
+        <div class="systems-header">
+          <div><p class="section-label">Engineering / 02</p><h2 id="systems-title">Core systems</h2></div>
+          <p>The game connects perception, coordination, objectives, animation, health, and optimization through focused systems that communicate through events and shared state.</p>
+        </div>
+        <div class="systems-grid">
+          <article class="system-card"><span class="index">01</span><h3>Tactical behavior tree</h3><p>Used services, decorators, and visibility traces for clean transitions between patrol, investigation, pursuit, and attack without tracking the player through walls.</p></article>
+          <article class="system-card"><span class="index">02</span><h3>Squad awareness</h3><p>Converted gunfire into shared last-known position and direction data so nearby AI coordinate an investigation before returning to individual decisions.</p></article>
+          <article class="system-card"><span class="index">03</span><h3>Event-driven objectives</h3><p>Collection, elimination, and key events update GameMode state and unlock the exit only after every requirement is satisfied.</p></article>
+          <article class="system-card"><span class="index">04</span><h3>Animation state</h3><p>Combined player input, velocity, movement direction, and actor rotation for responsive transitions among locomotion, aiming, and attack states.</p></article>
+          <article class="system-card"><span class="index">05</span><h3>Reusable health component</h3><p>Broadcast normalized health through a multicast delegate, allowing player and AI UMG health bars to update without Tick polling.</p></article>
+          <article class="system-card"><span class="index">06</span><h3>AI workload control</h3><p>Used octree queries, visibility traces, and NavMesh connectivity checks to suspend Tick for unreachable enemies and reduce unnecessary processing.</p></article>
+        </div>
+      </section>
+    </div>
+
+    <a class="next-project" href="fishing-engine.html"><div><small>Next case study</small><strong>Fishing Game</strong></div><span aria-hidden="true">→</span></a>
+  </main>
+  <footer class="project-footer"><span>© <span data-year>2026</span> Jiayi Li</span><a href="Jiayi-Li-Unreal-Engine-Resume.pdf" target="_blank">View Resume ↗</a></footer>
+  <script src="language.js"></script>
+  <script>document.querySelector('[data-year]').textContent = new Date().getFullYear();</script>
+</body>
+</html>
