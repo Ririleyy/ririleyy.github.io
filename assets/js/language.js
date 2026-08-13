@@ -267,12 +267,12 @@
         '#differentiable .project-heading span': '06 / 逆向渲染',
         '#differentiable h2': 'Differentiable Rendering',
         '#differentiable .project-heading > p': '基于 Wang, Deng, Zhang, Jakob 与 Marschner 的论文“A Simple Approach to Differentiable Rendering of SDFs”进行实现.',
-        '.game-cta p': '从图形学到玩法',
+        '.game-cta p': '更多游戏项目',
         '.graphics-footer a:nth-child(2)': '邮件 ↗'
       },
       html: {
-        '.game-cta h2': '在我的游戏项目中<br>查看这些技术基础.',
-        '.game-cta > a': '浏览游戏项目 <span aria-hidden="true">→</span>'
+        '.game-cta h2': '查看其他<br>游戏项目.',
+        '.game-cta > a': '查看游戏项目 <span aria-hidden="true">→</span>'
       },
       attrs: {
         '.graphics-nav': { 'aria-label': '图形学页面导航' },
