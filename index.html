@@ -336,17 +336,17 @@
     })();
 
     (() => {
-      const DEBUG_ALWAYS_PLAY = true; // TEMP: set back to false to restore the once-per-hour gate
+      const DEBUG_ALWAYS_PLAY = false;
       const intro = document.getElementById('wandIntro');
       if (!intro) return;
       const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      const HOUR = 60 * 60 * 1000;
+      const TWENTY_MINUTES = 20 * 60 * 1000;
       const KEY = 'jl_wand_intro_ts';
       let shouldPlay = DEBUG_ALWAYS_PLAY;
       if (!DEBUG_ALWAYS_PLAY) {
         try {
           const last = Number(localStorage.getItem(KEY) || 0);
-          shouldPlay = Date.now() - last > HOUR;
+          shouldPlay = Date.now() - last >= TWENTY_MINUTES;
           if (shouldPlay) localStorage.setItem(KEY, String(Date.now()));
         } catch (err) {
           shouldPlay = true;

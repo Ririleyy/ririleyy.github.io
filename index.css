@@ -25,6 +25,12 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* Keep the Chinese version visually aligned with the English typography while
+   using a clean CJK fallback for glyphs Manrope does not contain. */
+html[lang="zh-CN"] body {
+  font-family: "Manrope", "Microsoft YaHei UI", "Microsoft YaHei", sans-serif;
+}
+
 body::before {
   content: "";
   position: fixed;
@@ -368,6 +374,11 @@ main { overflow: hidden; }
 
 .hero h1 em { color: var(--accent); font-style: normal; }
 
+html[lang="zh-CN"] .hero h1 {
+  line-height: 1.12;
+  letter-spacing: -0.045em;
+}
+
 .hero-intro {
   max-width: 570px;
   margin: 0;
@@ -607,6 +618,7 @@ main { overflow: hidden; }
 .project-copy h3 a { text-decoration: none; }
 .project-copy h3 a:hover { color: var(--accent); }
 .project-copy > p:not(.project-type) { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.7; }
+.project-copy h3 small { font-size: .42em; font-weight: 500; letter-spacing: 0; white-space: nowrap; }
 .tag-list { padding: 0; margin: 27px 0 0; display: flex; flex-wrap: wrap; gap: 8px; list-style: none; }
 .tag-list li { padding: 8px 10px; border: 1px solid var(--line); color: var(--muted); font: 400 9px var(--mono); text-transform: uppercase; letter-spacing: .07em; }
 .case-study-link { margin-top: 25px; width: fit-content; padding-bottom: 7px; display: inline-flex; align-items: center; gap: 14px; border-bottom: 1px solid var(--accent); color: var(--accent); font: 500 10px var(--mono); text-decoration: none; text-transform: uppercase; letter-spacing: .06em; }
